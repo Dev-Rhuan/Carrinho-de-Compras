@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    background-color: lightblue;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}

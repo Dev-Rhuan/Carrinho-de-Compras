@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carrinho.css">
+    <title>Carrinho</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Carrinho</h1>
+            <div class="itens">
+                <div>
+                    <input type="text" placeholder="Buscar">
+                    <button onclick="buscar()">Buscar</button>
+                </div>
+                <div>
+                    <div>
+                        <!-- Produtos -->
+                    </div>
+                </div>
+            </div>
+            <div class="summary">
+                <h2>Order Summary</h2>
+                <hr>
+                <div>
+                    <p>Itens: 0</p>
+                    <div>
+                        <p>Carrinho vazio</p>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <p>Total:</p>
+                    <div>R$ 0,00</div>
+                    <button onclick="checkout()" disabled>Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
