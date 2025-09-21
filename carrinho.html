@@ -4,47 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="assets/styles/carrinho.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Carrinho</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="carrinho">
-            <div class="itens">
-                <h1>🛒 Carrinho</h1>
-                <hr>
-                <div class="buscar">
-                    <input type="text" placeholder="Buscar">
-                    <button onclick="buscar()"><span class="material-symbols-outlined">
-search
-</span></button>
+    <header>
+        <div>
+            <h1>🛒 Carrinho de Compras</h1>
+        </div>
+        <div>
+            <span>Bem-vindo(a)</span>
+            <a href="/login.html">Sair</a>
+        </div>
+    </header>
+    <div>
+        <div>
+            <div id="produtos-menu">
+                <div class="buscar-produtos">
+                    <label for="search">Buscar Produtos:</label>
+                    <input id="buscar-input" type="text" placeholder="Buscar">
                 </div>
                 <div id="lista-produtos">
-                    
+                    <!-- produtos -->
                 </div>
             </div>
-            <div class="summary">
-                <div class="cart-header">
-                    <h2>Seu Pedido</h2>
-                    <p> <span class="item-count">Itens: 0</span></p>
+        </div>
+        <div>
+            <div id="carrinho-menu">
+                <div id="carrinho-itens">
+                    <!-- carrinho -->
                 </div>
-                <div id="cart-items">
-                    <!-- Inserir itens via JS -->
-                    <p id="cart-message">Seu carrinho está vazio!</p>
-                </div>
+                <p id="carrinho-mensagem">Seu carrinho está vazio!</p>
                 <div class="total">
                     <div>
                         <span>Total: </span>
-                        <span id="cart-total">R$ 0,00</span>
+                        <span id="carrinho-total">R$ 0,00</span>
                     </div>
-                    <button id="cart-finish" onclick="finalizar()" disabled>Finalizar Pedido</button>
+                    <button id="carrinho-finalizar" onclick="finalizar()" disabled>Finalizar Pedido</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="assets/js/menu.js"></script>
 </body>
 
 </html>
