@@ -1,16 +1,159 @@
-body {
+* {
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    display: inline-block;
-    background-color: lightblue;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
+    background-color: #ffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+.itens hr {
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 20px 0 20px 0;
+}
+
+.itens h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.carrinho {
+    display: flex;
+}
+
+.itens {
+    width: 100%;
+    padding: 40px;
+}
+
+.itens .buscar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.itens input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    font-size: 16px;
+}
+
+.buscar button {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #111;
+    border: none;
+    cursor: pointer;
+}
+
+.buscar span {
+    color: #fff;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    background-color: #ebebeb; 
+    padding: 40px;
+    width: 100%;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.itens-count {
+    margin: 20px 0 20px 0;
+}
+
+.total {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.total > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary p {
+    margin: 0;
+    color: #666;
+    font-weight: 500;
+}
+
+.summary button {
+    width: 100%;
+    padding: 15px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.summary button:hover {
+    background-color: #333;
+}
+
+.summary button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.produto {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 4fr 2fr 1fr;
+    padding: 20px;
+    align-items: center;
+}
+
+.produto button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #111;
+    border: none;
+    cursor: pointer;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+}
+
+.produto button span {
+    color: white;
 }
