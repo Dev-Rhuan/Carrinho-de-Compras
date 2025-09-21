@@ -119,6 +119,28 @@ function removerDoCarrinho(id) {
 
 // Buscar produtos
 
+function buscar() {
+    const input = document.getElementById('buscar-input').value.toLowerCase();
+
+    ListaDeProdutos.innerHTML = '';
+
+    const produtosFiltrados = produtos.filter(p => p.nome.toLowerCase().includes(input));
+
+    for (let i = 0; i < produtosFiltrados.length; i++) {
+        const produtoDiv = document.createElement("div");
+        produtoDiv.classList.add('produto');
+
+        produtoDiv.innerHTML = `
+            <img src="${produtosFiltrados[i].imgUrl}" alt="${produtosFiltrados[i].nome}">
+            <p>${produtosFiltrados[i].nome}</p>
+            <p>R$ ${produtosFiltrados[i].preco.toFixed(2)}</p>
+            <button onclick="adicionarAoCarrinho(${produtosFiltrados[i].id})"><span class="material-symbols-outlined">add</span></button>
+        `;
+
+        ListaDeProdutos.appendChild(produtoDiv);
+    }
+}
+
 // Finalizar pedido
 
 function finalizarCarrinho() {
