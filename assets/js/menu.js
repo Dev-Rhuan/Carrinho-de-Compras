@@ -26,7 +26,7 @@ const ListaDeProdutos = document.getElementById('lista-produtos');
 
 for (let i = 0; i < produtos.length; i++) {
     const produtoDiv = document.createElement("div");
-    
+
     produtoDiv.classList.add('produto');
 
     produtoDiv.innerHTML = `
@@ -66,7 +66,6 @@ function exibirCarrinho() {
             let subTotal = carrinho[i].preco * carrinho[i].quantidade;
             total += subTotal;
 
-
             itensDiv.innerHTML = `
                 <div>
                     <p>${carrinho[i].nome}</p>
@@ -81,9 +80,7 @@ function exibirCarrinho() {
 
             carrinhoTotal.innerText = `R$ ${total.toFixed(2)}`;
         }
-
     }
-
 }
 
 // Funções de Adicionar, Remover, buscar e Finalizar
@@ -143,6 +140,62 @@ function buscar() {
 
 // Finalizar pedido
 
-function finalizarCarrinho() {
-}
+const openButton = document.getElementById('carrinho-finalizar');
+
+openButton.addEventListener('click', function () {
+    const dialog = document.createElement('dialog')
+    dialog.id = 'modal'
+
+    const valorTotal = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
+    const quantidadeTotalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+
+    const listaDeItensHtml = carrinho.map(item => `
+                <div class="item-resumo">
+                    <p>${item.nome} (${item.quantidade})</p>
+                    <p>R$${item.preco * item.quantidade}</p>
+                </div>
+            `).join('');
+
+    dialog.innerHTML = `
+                <header>
+                    <div>
+                        <h3>Resumo do Pedido</h3>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Total</p>
+                            <span>R$${valorTotal.toFixed(2)}</span>
+                        </div>
+                        <div>
+                            <p>Itens:</p>
+                            <span>${quantidadeTotalItens}</span>
+                        </div>
+                    </div>
+                    <button id="btn-fechar">&times;</button>
+                </header>
+                <div class="corpo-modal">
+                    ${listaDeItensHtml}
+                </div>
+                <div>
+                    <p>Pagamento</p>
+                    <div>
+                        <p>Total</p>
+                        <span>R$${valorTotal.toFixed(2)}</span>
+                    </div>
+                    <button>Pagar</button>
+                </div>
+            `;
+
+
+
+    document.body.appendChild(dialog);
+
+    dialog.querySelector('#btn-fechar').addEventListener('click', () => {
+        dialog.close();
+        dialog.remove();
+    });
+
+    dialog.showModal();
+
+});
 
