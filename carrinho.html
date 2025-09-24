@@ -24,7 +24,7 @@
             <div id="produtos-menu">
                 <div class="buscar-produtos">
                     <label for="search">Buscar Produtos:</label>
-                    <input onkeyup="buscar()" id="buscar-input" type="text" placeholder="Buscar">
+                    <input onkeyup="buscarProdutos()" id="buscar-input" type="text" placeholder="Buscar">
                 </div>
                 <div id="lista-produtos">
                     <!-- produtos -->
@@ -42,15 +42,12 @@
                         <span>Total: </span>
                         <span id="carrinho-total">R$ 0,00</span>
                     </div>
-                    <button class="open-modal" data-modal="modal" id="carrinho-finalizar" disabled>Finalizar Pedido</button>
+                    <button id="carrinho-finalizar" disabled>Finalizar Pedido</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="resumo-carrinho">
-        
-    </div>
-    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/carrinho.js"></script>
 </body>
 
 </html>

@@ -1,18 +1,18 @@
 const loginForm = document.getElementById('login-form');
-const errorMessageDiv = document.getElementById('error-message');
+const MensagemErroDiv = document.getElementById('erro-mensagem');
 
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const usuario = document.getElementById('usuario').value;
+    const senha = document.getElementById('senha').value;
 
-    if (email === "admin@admin" && password === "admin") {
-        errorMessageDiv.style.display = 'none';
+    if (usuario === "admin@admin" && senha === "admin") {
+        MensagemErroDiv.style.display = 'none';
         window.location.href = "./carrinho.html";
     } else {
-        errorMessageDiv.style.display = 'block';
-        errorMessageDiv.innerText = "Email ou senha inválidos.";
+        MensagemErroDiv.style.display = 'block';
+        MensagemErroDiv.innerText = "Usuario ou senha inválidos.";
     }
 
 });
