@@ -87,7 +87,7 @@ function exibirCarrinho() {
     }
 }
 
-// Funções de Adicionar, Remover, buscar e Finalizar
+// Funções de Adicionar, Remover, Buscar e Finalizar
 
 // Adicionar ao carrinho
 
@@ -137,7 +137,6 @@ abrirResumo.addEventListener('click', function () {
     dialog.id = 'modal'
 
     const valorTotal = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
-    const TotalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
 
     const resumo = carrinho.map(item => `
         <div class="item-resumo">
@@ -151,16 +150,6 @@ abrirResumo.addEventListener('click', function () {
             <h3>Resumo do Pedido</h3>
             <button id="btn-fechar">&times;</button>
         </header>
-        <div class="resumo">
-            <div>
-                <p>Total:</p>
-                <span>R$${valorTotal.toFixed(2)}</span>
-            </div>
-            <div>
-                <p>Itens:</p>
-                <span>${TotalItens}</span>
-            </div>
-        </div>
         <div class="corpo-modal">
             ${resumo}
         </div>

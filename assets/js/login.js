@@ -7,7 +7,7 @@ loginForm.addEventListener('submit', function(event) {
     const usuario = document.getElementById('usuario').value;
     const senha = document.getElementById('senha').value;
 
-    if (usuario === "admin@admin" && senha === "admin") {
+    if (usuario === "admin" && senha === "admin") {
         MensagemErroDiv.style.display = 'none';
         window.location.href = "./carrinho.html";
     } else {
